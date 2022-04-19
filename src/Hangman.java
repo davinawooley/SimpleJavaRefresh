@@ -22,7 +22,7 @@ public class Hangman {
             }
         }
 
-        guessesLeft-=1;
+        this.guessesLeft-=1;
         System.out.println("letters incorrect " + lettersCorrect );
         System.out.println("Guesses Left: "+ guessesLeft);
         System.out.println(progressOutputArray.toString());
@@ -44,10 +44,29 @@ public class Hangman {
             progressOutputArray.add('*');
         }
 
-        while ( progressOutputArray.contains('*')==true){
+        while ( progressOutputArray.contains('*')==true ){
             String input = scanner.next();
             char toChar = input.charAt(0);
             this.makeGuess(toChar);
+            if(guessesLeft<1 || progressOutputArray.contains('*')==false){
+                System.out.println("You are out of guesses.");
+                guessesLeft = 10;
+                progressOutputArray.clear();
+                progressArray.clear();
+//            int lettersCorrect = 0;
+            }
+
+
         }
+        System.out.println("Would you like to play again? y or n");
+        String playAgain = scanner.next().toLowerCase();
+       if(playAgain.equals("y") ){
+          playHangman();
+       }
+       else{
+           System.out.println("Thanks for playing!");
+       }
+
+
     }
 }
