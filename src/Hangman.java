@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Hangman {
-    String[] wordBank = {"nacho", "potato", "cookie", "apple", "pizza"};
+    String[] wordBank = {"nacho", "potato", "cookie", "apple", "pizza", "fries", "sushi", "Cool Ranch Dorito"};
     String randomWord = wordBank[((int)(Math.random() * wordBank.length) + 0)];
 
     String  ignoreTheCase = randomWord.toLowerCase();
@@ -41,7 +41,13 @@ public class Hangman {
         }
 
         for(int i = 0; i<wordLength; i++){
-            progressOutputArray.add('*');
+            if(wordToChar[i] != ' '){
+                progressOutputArray.add('*');
+            }
+            else{
+                progressOutputArray.add(' ');
+            }
+
         }
 
         while ( progressOutputArray.contains('*')==true ){
@@ -53,10 +59,7 @@ public class Hangman {
                 guessesLeft = 10;
                 progressOutputArray.clear();
                 progressArray.clear();
-//            int lettersCorrect = 0;
             }
-
-
         }
         System.out.println("Would you like to play again? y or n");
         String playAgain = scanner.next().toLowerCase();
