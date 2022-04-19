@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Hangman {
-    String[] wordBank = {"nacho", "potato", "cookie", "apple", "pizza", "fries", "sushi", "Cool Ranch Dorito"};
+    String[] wordBank = {"nacho", "potato", "cookie", "apple", "pizza", "fries", "sushi", "Cool Ranch Doritos"};
     String randomWord = wordBank[((int)(Math.random() * wordBank.length) + 0)];
 
     String  ignoreTheCase = randomWord.toLowerCase();
