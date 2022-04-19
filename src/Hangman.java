@@ -9,7 +9,6 @@ public class Hangman {
     ArrayList<Character> progressArray = new ArrayList<>();
     ArrayList<Character> progressOutputArray = new ArrayList<>();
 
-    int wordLength = wordToChar.length;
     int lettersCorrect = 0;
     int guessesLeft = 10;
 
@@ -23,8 +22,7 @@ public class Hangman {
             }
         }
 
-       guessesLeft-=1;
-        int product = wordLength-lettersCorrect;
+        guessesLeft-=1;
         System.out.println("letters incorrect " + lettersCorrect );
         System.out.println("Guesses Left: "+ guessesLeft);
         System.out.println(progressOutputArray.toString());
